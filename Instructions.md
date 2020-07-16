@@ -24,7 +24,7 @@ Here are the products listed by code and the prices to use (there is no sales ta
 There should be a top level point of sale object that implements the following `ITerminal` interface. You are free to design, implement, and add to the interface code however you wish, including how you specify the prices in the system:
 
 ```csharp
-internal interface ITerminal
+public interface ITerminal
 {
     void Scan(string item);
     decimal Total();
