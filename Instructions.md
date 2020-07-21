@@ -1,6 +1,12 @@
 # Assignment
 
-Build a simple shopping cart that handles volume discounts.
+Build a simple shopping cart that handles volume discounts as a class library with an accompanying test project.
+
+Language: C#
+
+Framework: .NET Core 3.1 or later
+
+Expected time to complete: less than two hours.
 
 ## Introduction
 
@@ -12,7 +18,7 @@ Implement a shopping cart that accepts an arbitrary ordering of products (simila
 
 Here are the products listed by code and the prices to use (there is no sales tax):
 
-| Product Code | Price ­­­­­          ­­­­­­­­­­­­­|
+| Product Code | Price           |
 | :----------- | --------------- |
 | A | $2.00 each or 4 for $7.00  |
 | B | $12.00                     |
@@ -21,7 +27,7 @@ Here are the products listed by code and the prices to use (there is no sales ta
 
 ## Requirements
 
-There should be a top level point of sale object that implements the following `ITerminal` interface. You are free to design, implement, and add to the interface code however you wish, including how you specify the prices in the system:
+There should be a top level point of sale object that implements the following `ITerminal` interface. You are free to design, implement, and add to the interface code however you wish. You are free to determine how you will specify the prices in the system:
 
 ```csharp
 public interface ITerminal
