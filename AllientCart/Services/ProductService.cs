@@ -51,7 +51,7 @@ namespace AllientCart.Services
             if (cart == null || !cart.Any())
                 return 0m;
 
-            decimal total = cart.GroupBy(x => x.ProductCode).Sum(y => GetVolumePrice(y.Key, y.Count()));
+            decimal total = cart.GroupBy(x => x.ProductCode).Sum(y => GetVolumePrice(y.Key,  y.Count()));
             return total;
         }
 
@@ -84,7 +84,7 @@ namespace AllientCart.Services
             if (qty == 1)
             {
                 price = priceBreaks[0].Price;
-                totalPrice =  qtyPurchased * price;
+                totalPrice =  qty * price;
             }
             else
             {
@@ -95,7 +95,7 @@ namespace AllientCart.Services
                 // Call this method recursively with remainders, finding each successively lower price break.
                 totalPrice = (multiple * volDis.MinQty * volDis.Price) + (remainder == 0 ? 0 : GetVolumePrice(productCode, remainder));
             }
-            return totalPrice;
+            return totalPrice * (qtyPurchased < 0 ? -1 : 1);
         }
     }
 }
